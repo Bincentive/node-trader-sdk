@@ -1,0 +1,25 @@
+{
+  "name": "bincentive-api",
+  "version": "0.1.0",
+  "description": "bincentive WebAPI wrapper",
+  "main": "bincentive.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@ssh.scm.bincentive.com:dylan/bincentive-api.git"
+  },
+  "keywords": [
+    "api"
+  ],
+  "author": "bincentive",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "chai": "^4.2.0",
+    "dotenv": "^6.2.0",
+    "lodash": "^4.17.11",
+    "openpgp": "^4.2.2"
+  }
+}

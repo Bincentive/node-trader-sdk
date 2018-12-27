@@ -1,0 +1,128 @@
+var chai = require('chai'),
+  expect = chai.expect,
+  should = chai.should(),
+  debug = require('debug')('test'),
+  Bincentive = require('.');
+
+require('dotenv').load()
+
+var client 
+before(async () => {
+  var email = process.env.EMAIL || ""
+  var password = process.env.PASSWD || ""
+  client = new Bincentive(email, password)
+  // console.log(client)
+  // client._accessToken = '6e804fec8bef5ba0a9b30cf1e91cc127adc9ee921054b5ab967d5f00b11eb057bcbd5ff9132270e12b03daf0321782bd0111864c329438769b56aa2e0fe3c85e82bdf3663d766074435d969f94be564c6f757e3e0f8a4ef1bed01f181ecf6a041802e4e4622660f5baf04e93260ef3054601c8a808ee9686080c103a25164c4837635a78edd1932c435f67e30d7964d2ca1cd01a2ef6d027cee3d4c7ec4e1cc9e25d211b875f448cef9057f8539890a4'
+})
+
+describe('Begin Bicentive NodeJS SDK Test', function () {
+  this.timeout(3000)
+  this.slow(1000)
+  it('should able to create client object', async function () {
+    client.version.should.be.equal('0.1')
+  })
+
+  it('should able to get available exchanges', async function () {
+    var result
+    try {
+      result = await client.getAvailableExchanges()
+    } catch (e) {
+      debug(JSON.stringify(e.response.data))
+    } finally {
+      expect(result).exist
+      debug(result)
+      result.status.should.be.equal(0)
+    }
+  })
+
+  it('should able to get exchange list', async function () {
+    var result
+    try {
+      result = await client.getExchangeList()
+    } catch (e) {
+      debug(JSON.stringify(e.response.data))
+    } finally {
+      expect(result).exist
+      debug(result)
+      result.status.should.be.equal(0)
+    }
+  })
+  
+  it('should able to get strategy list', async function () {
+    var result
+    try {
+      result = await client.getStrategyList()
+    } catch (e) {
+      // console.log(e)
+    } finally {
+      expect(result).exist
+      debug(result)
+      result.status.should.be.equal(0)
+    }
+  })
+
+  it('should able to get approved strategy list', async function () {
+    var result 
+    try {
+      result = await client.getApprovedStrategyList()
+    } catch (e) {
+      // console.log(e)
+    } finally {
+      expect(result).exist
+      debug(result)
+      result.status.should.be.equal(0)
+    }
+  })
+
+  it('should able to add strategy order', async function () {
+    var result
+    try {
+      result = await client.addOrder(71, 2, "BTC", "USDT", "MARKET", "BUY", 1.5, 4500)
+    } catch (e) {
+      // console.log(e)
+    } finally {
+      expect(result).exist
+      debug(result)
+      result.status.should.be.equal(0)
+    }
+  })
+
+  it('should able to get apikey list', async function () {
+    var result
+    try {
+      result = await client.getApiKeyList()
+    } catch (e) {
+      // console.log(e)
+    } finally {
+      expect(result).exist
+      debug(result)
+      result.status.should.be.equal(0)
+    }
+  })
+
+  it('should able to add apikey', async function () {
+    var result
+    try {
+      result = await client.addApiKey('zxc', 'zxc', 2, 'zxc', true)
+    } catch (e) {
+      console.log(e)
+    } finally {
+      expect(result).exist
+      debug(result)
+      result.status.should.be.equal(0)
+    }
+  })
+
+  it('should able to del apikey', async function () {
+    var result
+    try {
+      result = await client.deleteApiKey(2)
+    } catch (e) {
+      // console.log(e)
+    } finally {
+      expect(result).exist
+      debug(result)
+      result.status.should.be.equal(0)
+    }
+  })
+})
