@@ -7,11 +7,11 @@ const VERSION = '0.1',
   TIMEOUT     = 5000
 
 /**
- * Bincentive Trader Client
+ * Bincentive trader client
  */
 class BincentiveClient {
   /**
-   * bincentive Trader Client
+   * Bincentive Trader Client
    * @param {string} email 
    * @param {string} password 
    * @param {boolean} sandbox 
