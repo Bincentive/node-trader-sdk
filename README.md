@@ -1,6 +1,6 @@
 <a name="BincentiveClient"></a>
 
-## BincentiveClient
+## Bincentive Client Methods
 Bincentive Trader Client
 
 **Kind**: global class  
