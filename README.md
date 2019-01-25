@@ -1,6 +1,6 @@
 <a name="BincentiveClient"></a>
 
-## BincentiveClient
+## Bincentive Client Methods
 Bincentive Trader Client
 
 **Kind**: global class  
@@ -24,7 +24,7 @@ Bincentive Trader Client
 <a name="new_BincentiveClient_new"></a>
 
 ### new BincentiveClient(email, password, sandbox)
-bincentive Trader Client
+Bincentive trader client
 
 
 | Param | Type | Default |
@@ -36,7 +36,7 @@ bincentive Trader Client
 <a name="BincentiveClient+timeout"></a>
 
 ### bincentiveClient.timeout(ms)
-set client default timeout
+Sets client default timeout
 
 **Kind**: instance method of [<code>BincentiveClient</code>](#BincentiveClient)  
 
@@ -47,7 +47,7 @@ set client default timeout
 <a name="BincentiveClient+addOrder"></a>
 
 ### bincentiveClient.addOrder(strategyId, exchangeId, baseCurrency, quoteCurrency, orderType, orderSide, unit, limitPrice)
-add market order to specify strategy id
+Adds an order for a specific strategy
 
 **Kind**: instance method of [<code>BincentiveClient</code>](#BincentiveClient)  
 
@@ -65,13 +65,15 @@ add market order to specify strategy id
 <a name="BincentiveClient+getHistoryList"></a>
 
 ### bincentiveClient.getHistoryList()
-get order history
+Gets the historical data of all transactions
 
 **Kind**: instance method of [<code>BincentiveClient</code>](#BincentiveClient)  
+
+
 <a name="BincentiveClient+getOrderInfo"></a>
 
 ### bincentiveClient.getOrderInfo(orderId)
-get order detail info
+Gets Bincentive order number
 
 **Kind**: instance method of [<code>BincentiveClient</code>](#BincentiveClient)  
 
@@ -82,13 +84,13 @@ get order detail info
 <a name="BincentiveClient+getAvailableExchanges"></a>
 
 ### bincentiveClient.getAvailableExchanges()
-get supported exchanges
+Gets the list of exchanges currently available
 
 **Kind**: instance method of [<code>BincentiveClient</code>](#BincentiveClient)  
 <a name="BincentiveClient+getAvailableSymbols"></a>
 
 ### bincentiveClient.getAvailableSymbols(exchange_name)
-get exhange supported symbols
+Gets an exchange's available trading pairs
 
 **Kind**: instance method of [<code>BincentiveClient</code>](#BincentiveClient)  
 
@@ -99,7 +101,7 @@ get exhange supported symbols
 <a name="BincentiveClient+getCurrentPrice"></a>
 
 ### bincentiveClient.getCurrentPrice(exchange_name, symbol_name)
-get symbol current price
+Gets the current price of a trading pair
 
 **Kind**: instance method of [<code>BincentiveClient</code>](#BincentiveClient)  
 
@@ -111,25 +113,25 @@ get symbol current price
 <a name="BincentiveClient+getStrategyList"></a>
 
 ### bincentiveClient.getStrategyList()
-get strategy list
+Gets the list of strategies
 
 **Kind**: instance method of [<code>BincentiveClient</code>](#BincentiveClient)  
 <a name="BincentiveClient+getApprovedStrategyList"></a>
 
 ### bincentiveClient.getApprovedStrategyList()
-get approved stragtegy list
+Gets the list of approved strategies
 
 **Kind**: instance method of [<code>BincentiveClient</code>](#BincentiveClient)  
 <a name="BincentiveClient+getExchangeList"></a>
 
 ### bincentiveClient.getExchangeList()
-get exchange list
+Gets the list of exchanges 
 
 **Kind**: instance method of [<code>BincentiveClient</code>](#BincentiveClient)  
 <a name="BincentiveClient+addApiKey"></a>
 
 ### bincentiveClient.addApiKey(apiKey, secretKey, exchangeId, apiNickname, fixApiAssign)
-add exchange api key
+Adds all the keys of each transaction
 
 **Kind**: instance method of [<code>BincentiveClient</code>](#BincentiveClient)  
 
@@ -144,7 +146,7 @@ add exchange api key
 <a name="BincentiveClient+deleteApiKey"></a>
 
 ### bincentiveClient.deleteApiKey(exchangeId)
-delete exchange api key by id
+Deletes all the keys of a transaction
 
 **Kind**: instance method of [<code>BincentiveClient</code>](#BincentiveClient)  
 
@@ -155,6 +157,6 @@ delete exchange api key by id
 <a name="BincentiveClient+getApiKeyList"></a>
 
 ### bincentiveClient.getApiKeyList()
-get exchange api key list
+Gets API key list
 
 **Kind**: instance method of [<code>BincentiveClient</code>](#BincentiveClient)  
