@@ -7,11 +7,11 @@ const VERSION = '0.1',
   TIMEOUT     = 5000
 
 /**
- * Bincentive Trader Client
+ * Bincentive trader client
  */
 class BincentiveClient {
   /**
-   * bincentive Trader Client
+   * Bincentive Trader Client
    * @param {string} email 
    * @param {string} password 
    * @param {boolean} sandbox 
@@ -30,7 +30,7 @@ class BincentiveClient {
   }
 
   /**
-   * set client default timeout
+   * Sets client default timeout
    * @param {number} ms 
    */
   timeout(ms) {
@@ -83,7 +83,7 @@ class BincentiveClient {
   }
 
   /**
-   * add market order to specify strategy id
+   * Adds an order for a specific strategy
    * @param {number} strategyId 
    * @param {number} exchangeId
    * @param {string} baseCurrency 
@@ -104,7 +104,7 @@ class BincentiveClient {
   }
 
   /**
-   * get order history
+   * Gets the historical data of all transactions
    */
   getHistoryList() {
     return this._sendAuthRequest(
@@ -116,7 +116,7 @@ class BincentiveClient {
   }
 
   /**
-   * get order detail info
+   * Gets order information
    * @param {number} orderId
    */
   getOrderInfo(orderId) {
@@ -130,7 +130,7 @@ class BincentiveClient {
   }
 
   /**
-   * get supported exchanges
+   * Gets the list of exchanges currently available
    */
   getAvailableExchanges() {
     return this._sendRequest(
@@ -142,7 +142,7 @@ class BincentiveClient {
   }
 
   /**
-   * get exhange supported symbols
+   * Gets the available trading pairs for an exchange
    * @param {string} exchange_name 
    */
   getAvailableSymbols(exchange_name) {
@@ -155,7 +155,7 @@ class BincentiveClient {
   }
 
   /**
-   * get symbol current price
+   * Gets the current price of a trading pair
    * @param {string} exchange_name
    * @param {string} symbol_name
    */
@@ -169,7 +169,7 @@ class BincentiveClient {
   }
 
   /**
-   * get strategy list
+   * Gets the list of strategies
    */
   getStrategyList() {
     return this._sendAuthRequest(
@@ -180,7 +180,7 @@ class BincentiveClient {
   }
 
   /**
-   * get approved stragtegy list
+   * Gets the list of approved strategies
    */
   getApprovedStrategyList() {
     return this._sendAuthRequest(
@@ -192,7 +192,7 @@ class BincentiveClient {
   }
 
   /**
-   * get exchange list
+   * Gets the list of exchanges
    */
   getExchangeList() {
     return this._sendRequest(
@@ -203,7 +203,7 @@ class BincentiveClient {
   }
 
   /**
-   * add exchange api key
+   * Adds all the keys of each transaction
    * @param {string} apiKey 
    * @param {string} secretKey 
    * @param {number} exchangeId 
@@ -223,7 +223,7 @@ class BincentiveClient {
   }
 
   /**
-   * delete exchange api key by id
+   * Deletes all the keys of a transaction
    * @param {number} exchangeId 
    */
   deleteApiKey(exchangeId) {
@@ -237,7 +237,7 @@ class BincentiveClient {
   }
 
   /**
-   * get exchange api key list
+   * Gets API key list
    */
   getApiKeyList() {
     return this._sendAuthRequest(
