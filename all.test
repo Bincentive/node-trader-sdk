@@ -18,11 +18,11 @@ before(async () => {
 describe('Begin Bicentive NodeJS SDK Test', function () {
   this.timeout(3000)
   this.slow(1000)
-  it('should able to create client object', async function () {
+  it('creates a client object', async function () {
     client.version.should.be.equal('0.1')
   })
 
-  it('should able to get available exchanges', async function () {
+  it('gets available exchanges', async function () {
     var result
     try {
       result = await client.getAvailableExchanges()
@@ -35,7 +35,7 @@ describe('Begin Bicentive NodeJS SDK Test', function () {
     }
   })
 
-  it('should able to get exchange list', async function () {
+  it('gets the list of exchanges', async function () {
     var result
     try {
       result = await client.getExchangeList()
@@ -48,7 +48,7 @@ describe('Begin Bicentive NodeJS SDK Test', function () {
     }
   })
   
-  it('should able to get strategy list', async function () {
+  it('gets the list of strategies', async function () {
     var result
     try {
       result = await client.getStrategyList()
@@ -61,7 +61,7 @@ describe('Begin Bicentive NodeJS SDK Test', function () {
     }
   })
 
-  it('should able to get approved strategy list', async function () {
+  it('gets the list of approved strategies', async function () {
     var result 
     try {
       result = await client.getApprovedStrategyList()
@@ -74,7 +74,7 @@ describe('Begin Bicentive NodeJS SDK Test', function () {
     }
   })
 
-  it('should able to add strategy order', async function () {
+  it('adds an order for a specific strategy', async function () {
     var result
     try {
       result = await client.addOrder(71, 2, "BTC", "USDT", "MARKET", "BUY", 1.5, 4500)
@@ -100,7 +100,7 @@ describe('Begin Bicentive NodeJS SDK Test', function () {
     }
   })
 
-  it('should able to add apikey', async function () {
+  it('adds all the keys of each transaction', async function () {
     var result
     try {
       result = await client.addApiKey('zxc', 'zxc', 2, 'zxc', true)
@@ -113,7 +113,7 @@ describe('Begin Bicentive NodeJS SDK Test', function () {
     }
   })
 
-  it('should able to del apikey', async function () {
+  it('deletes all the keys of a transaction', async function () {
     var result
     try {
       result = await client.deleteApiKey(2)
